@@ -1,3 +1,5 @@
+name: Manually bump cask versions
+
 on:
   workflow_dispatch:
     inputs:

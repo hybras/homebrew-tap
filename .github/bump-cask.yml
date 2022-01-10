@@ -1,3 +1,5 @@
+name: Automatically bump cask versions
+
 on:
   schedule:
     # Every friday

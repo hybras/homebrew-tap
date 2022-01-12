@@ -3,7 +3,7 @@ name: Automatically bump cask versions
 on:
   schedule:
     # Every friday
-    - cron: '0 5 * * fri'
+    - cron: '0 5 * * FRI'
       
 jobs:
   bump:

@@ -5,6 +5,11 @@ class Pijul < Formula
   sha256 "d6dd02c47ffb436f8645939d8e172bd07d7f908cf7ea49f2aba6e23f1e58821a"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url "https://lib.rs/crates/pijul/versions"
+    regex(%r{href=["']?https://crates.io/crates/pijul/v?(\d+(?:\.\d+)+(?:-(?:alpha|beta))?(?:[._-]\d+)?)}i)
+  end
+
   depends_on "libsodium" => :build
   depends_on "llvm" => :build
   depends_on "openssl" => :build

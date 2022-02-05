@@ -1,0 +1,24 @@
+on:
+  workflow_dispatch:
+  schedule:
+    # Every friday
+    - cron: '0 5 * * FRI'
+
+jobs:
+  bump-formula:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+      - name: Bump formulae
+        uses: Homebrew/actions/bump-formulae@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          formula: |
+            asciidoctor-mathematical
+            czkawka
+            homebrew-createzap
+            pijul
+            sshpass
+

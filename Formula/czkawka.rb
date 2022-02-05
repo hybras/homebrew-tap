@@ -12,12 +12,11 @@ class Czkawka < Formula
   depends_on "librsvg"
 
   def install
-    std_cargo_args_with_path = std_cargo_args
-    path_arg_idx = std_cargo_args_with_path.index("--path")
-    std_cargo_args = std_cargo_args_with_path[0..path_arg_idx] + std_cargo_args_with_path[(path_arg_idx + 1)..]
+    system "cargo", "build", "--workspace", "--release", "--frozen", "--locked"
+    bin.install "target/release/czkawka_gui"
+    bin.install "target/release/czkawka_cli"
+  end
 
-    system "cargo", "install", *std_cargo_args, "--path", "czkawka_gui"
-    system "cargo", "install", *std_cargo_args, "--path", "czkawka_cli"
   end
 
   test do

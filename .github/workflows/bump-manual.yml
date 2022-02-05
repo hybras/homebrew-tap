@@ -17,5 +17,3 @@ jobs:
           token: ${{ secrets.PAT_GITHUB }}
           tap: hybras/tap
           cask: ${{ github.event.inputs.casks }}
-
-

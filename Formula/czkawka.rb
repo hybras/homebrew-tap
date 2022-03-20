@@ -17,8 +17,6 @@ class Czkawka < Formula
     bin.install "target/release/czkawka_cli"
   end
 
-  end
-
   test do
     system "false"
   end

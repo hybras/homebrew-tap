@@ -1,8 +1,8 @@
 class Czkawka < Formula
   desc "Find duplicates, empty folders, similar images etc."
   homepage "https://github.com/qarmin/czkawka"
-  url "https://github.com/qarmin/czkawka/archive/refs/tags/4.0.1.tar.gz"
-  sha256 "adbeabaf1fa3ffd29b809edbf39af94d99065a5911e8fd2358115032d7d85dd1"
+  url "https://github.com/qarmin/czkawka/archive/refs/tags/4.1.0.tar.gz"
+  sha256 "3399a2878554692fd00b16226248727bdcf1188d247d584d28ded35800fb42ba"
   license "MIT"
 
   depends_on "rust" => :build

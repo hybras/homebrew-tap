@@ -12,9 +12,8 @@ class Czkawka < Formula
   depends_on "librsvg"
 
   def install
-    system "cargo", "build", "--workspace", "--release", "--frozen", "--locked"
-    bin.install "target/release/czkawka_gui"
-    bin.install "target/release/czkawka_cli"
+    system "cargo", "install", *std_cargo_args, "--bin", "czkawka_gui"
+    system "cargo", "install", *std_cargo_args, "--bin", "czkawka_cli"
   end
 
   test do

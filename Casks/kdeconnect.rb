@@ -18,7 +18,7 @@ cask "kdeconnect" do
 
   zap trash: [
     "~/Library/Application Support/kpeoplevcard",
-    "~/Library/Caches/kdeconnect.sms"
+    "~/Library/Caches/kdeconnect.sms",
     "~/Library/Preferences/kdeconnect",
     "~/Library/Preferences/kdeconnect_runcommand",
     "~/Library/Preferences/kdeconnect_sendnotifications",

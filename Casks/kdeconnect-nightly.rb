@@ -2,7 +2,18 @@ cask "kdeconnect-nightly" do
   version :latest
   sha256 :no_check
  
-  url "https://binary-factory.kde.org/view/MacOS/job/kdeconnect-kde_Nightly_macos/lastStableBuild/artifact/kdeconnect-kde-master-1535-macos-64-clang.dmg"
+  url do
+    require 'open-uri'
+    base_url = "https://binary-factory.kde.org/view/MacOS/job/kdeconnect-kde_Nightly_macos/lastStableBuild"
+    version = URI(base_url.to_s)
+               .open
+               .read
+               .scan(/href=.*?kdeconnect-kde-master-(\d+)-macos-64-clang\.dmg/i)
+               .flatten
+               .first # should only be one mach
+    file = "kdeconnect-kde-master-#{version}-macos-64-clang.dmg"
+    "#{base_url}/artifact/#{file}"
+  end
   name "KDE Connect"
   desc "Enabling communication between all your devices"
   homepage "https://kdeconnect.kde.org/"

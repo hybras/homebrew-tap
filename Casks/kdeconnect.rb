@@ -2,18 +2,7 @@ cask "kdeconnect" do
   version :latest
   sha256 :no_check
 
-  url do
-    require 'open-uri'
-    base_url = "https://binary-factory.kde.org/view/MacOS/job/kdeconnect-kde_Release_macos/lastStableBuild"
-    version = URI(base_url.to_s)
-               .open
-               .read
-               .scan(/href=.*?kdeconnect-kde[._-]v?(\d+(?:[.-]\d+)+)-macos-64-clang\.dmg/i)
-               .flatten
-               .first # should only be one mach
-    file = "kdeconnect-kde-#{version}-macos-64-clang.dmg"
-    "#{base_url}/artifact/#{file}"
-  end
+  url "https://binary-factory.kde.org/view/MacOS/job/kdeconnect-kde_Release_macos/lastStableBuild/artifact/kdeconnect-kde-22.04.1-952-macos-64-clang.dmg"
   name "KDE Connect"
   desc "Enabling communication between all your devices"
   homepage "https://kdeconnect.kde.org/"

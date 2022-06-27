@@ -1,14 +1,14 @@
 cask "kdeconnect" do
-  version :latest
-  sha256 :no_check
+  version "22.04.1-950"
+  sha256 "9e9387fd03171a32a6f632967fb2fc47960b0b7b187f60bec7f6c3f1d8d65516"
 
-  url "https://binary-factory.kde.org/view/MacOS/job/kdeconnect-kde_Release_macos/lastStableBuild/artifact/kdeconnect-kde-22.04.1-952-macos-64-clang.dmg"
+  url "https://binary-factory.kde.org/job/kdeconnect-kde_Release_macos/#{version.match(/\d+(?:[.-](\d+))+/)[1]}/artifact/kdeconnect-kde-#{version}-macos-64-clang.dmg"
   name "KDE Connect"
   desc "Enabling communication between all your devices"
   homepage "https://kdeconnect.kde.org/"
 
   livecheck do
-    url "https://binary-factory.kde.org/job/kdeconnect-kde_Release_macos/lastStableBuild/artifact/"
+    url "https://binary-factory.kde.org/job/kdeconnect-kde_Release_macos/lastSuccessfulBuild/artifact/"
     regex(/href=.*?kdeconnect-kde[._-]v?(\d+(?:[.-]\d+)+)-macos-64-clang\.dmg/i)
   end
 

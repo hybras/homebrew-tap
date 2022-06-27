@@ -27,4 +27,6 @@ cask "kdeconnect-nightly" do
     "~/Library/Preferences/kdeconnect_share",
     "~/Library/Preferences/org.kde.kdeconnect.plist",
   ]
+
+  caveats "KDE Connect needs dbus. Install it with `brew install dbus`"
 end

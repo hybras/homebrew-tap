@@ -1,6 +1,8 @@
 #
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '47 5 * * 1,2,3,4,5'
 
 jobs:
   bump-formula:

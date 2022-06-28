@@ -1,5 +1,4 @@
-#
-name: Bump Package Version
+name: Bump Package Versions
 on:
   workflow_dispatch:
     inputs:
@@ -29,6 +28,17 @@ jobs:
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
+        id: set-up-homebrew
+      - name: Cache Homebrew Bundler RubyGems
+        id: cache
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ runner.os }}-rubygems-
+      - name: Install Homebrew Bundler RubyGems
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: brew install-bundler-gems
       - name: Tap hybras/tap
         run: brew tap hybras/tap
       - name: Bump Formula

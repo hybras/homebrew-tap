@@ -1,0 +1,35 @@
+#
+on:
+  workflow_dispatch:
+
+jobs:
+  bump-formula:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bump Formula
+        uses: Homebrew/actions/bump-formulae@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          formulae: |
+            czkawka
+            gtkcord4
+            pijul
+            sshpass
+            kdeconnect
+            kdeconnect-nightly
+  bump-casks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bump Casks
+        uses: Homebrew/actions/bump-formulae@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          formulae: |
+            airmessage
+            kdeconnect
+            kdeconnect-nightly
+            spotiflyer
+            webcord
+
+
+

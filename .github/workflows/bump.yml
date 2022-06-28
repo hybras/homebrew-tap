@@ -1,37 +1,38 @@
 #
+name: Bump Package Version
 on:
   workflow_dispatch:
+    inputs:
+      formulae:
+        description: Custom list of formulae to livecheck and bump if outdated
+        required: false
   schedule:
     - cron: '47 5 * * 1,2,3,4,5'
+
+env:
+  FORMULAE: >
+    czkawka
+    gtkcord4
+    pijul
+    sshpass
+    kdeconnect
+    kdeconnect-nightly
+    airmessage
+    kdeconnect
+    kdeconnect-nightly
+    spotiflyer
+    webcord
 
 jobs:
   bump-formula:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+      - name: Tap hybras/tap
+        run: brew tap hybras/tap
       - name: Bump Formula
         uses: Homebrew/actions/bump-formulae@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          formulae: |
-            czkawka
-            gtkcord4
-            pijul
-            sshpass
-            kdeconnect
-            kdeconnect-nightly
-  bump-casks:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Bump Casks
-        uses: Homebrew/actions/bump-formulae@master
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          formulae: |
-            airmessage
-            kdeconnect
-            kdeconnect-nightly
-            spotiflyer
-            webcord
-
-
-
+          formulae: ${{ github.event.inputs.formulae || env.FORMULAE }}

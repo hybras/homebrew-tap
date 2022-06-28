@@ -1,6 +1,4 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
+# This formula is deprecated in favor of running asciidoctor in a docker container
 class AsciidoctorMathematicalDeps < Formula
   desc "Convert math to images in asciidoc files"
   homepage "https://docs.asciidoctor.org/asciidoctor/latest/stem/mathematical/"

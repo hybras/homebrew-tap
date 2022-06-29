@@ -32,7 +32,7 @@ jobs:
       - name: Configure git
         uses: Homebrew/actions/git-user-config@master
         with:
-          username: BrewTestBot
+          username: ${{ (github.event_name == 'workflow_dispatch' && github.actor) || 'BrewTestBot' }}
       - name: Cache Homebrew Bundler RubyGems
         id: cache
         uses: actions/cache@v1

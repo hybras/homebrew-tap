@@ -5,7 +5,7 @@ cask "airmessage" do
   url "https://github.com/airmessage/airmessage-server/releases/download/v#{version}/AirMessage-#{version}.zip",
       verified: "github.com/airmessage"
   name "AirMessage"
-  desc "'s message relay server"
+  desc "iMessage relay server"
   homepage "https://airmessage.org/"
 
   app "AirMessage.app"

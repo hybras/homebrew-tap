@@ -10,11 +10,6 @@ cask "airmessage" do
   desc "AirMessage's message relay server"
   homepage "https://airmessage.org/"
 
-  livecheck do
-    url :url
-    strategy :git
-  end
-
   app "AirMessage.app"
 
   uninstall quit: "me.tagavari.airmessageserver"

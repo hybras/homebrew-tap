@@ -1,15 +1,10 @@
 cask "airmessage" do
 
-  arch = Hardware::CPU.intel? ? "intel" : "applesilicon"
-  version "3.4.1"
+  version "4.0.0"
 
-  if Hardware::CPU.intel?
-    sha256 "a5e92decb22cc34aa136408d3dbe42b5af89ddc4b13cd59be230bea1e7386456"
-  else
-    sha256 "02e3b25b6918e1cbe0878f795d526c693be0ad3e80fba9bbeb7d8317911483af"
-  end
+  sha256 "e86329a2a5ce0d4b816341f37a1824fca0bcb2233f94eb27def2116a226f928c"
   
-  url "https://github.com/airmessage/airmessage-server/releases/download/rel-#{version}/server-#{arch}-v#{version}.zip",
+  url "https://github.com/airmessage/airmessage-server/releases/download/v#{version}/AirMessage-v#{version}.zip",
       verified: "github.com/airmessage"
   name "AirMessage"
   desc "AirMessage's message relay server"

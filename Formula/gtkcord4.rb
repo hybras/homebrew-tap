@@ -8,7 +8,7 @@ class Gtkcord4 < Formula
   depends_on "go" => :build
   depends_on "gobject-introspection" => :build
   depends_on "gtk4" => :build
-  depends_on "libcanberra" => :build
+  depends_on "libcanberra"
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")

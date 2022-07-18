@@ -4,7 +4,7 @@ cask "airmessage" do
 
   sha256 "e86329a2a5ce0d4b816341f37a1824fca0bcb2233f94eb27def2116a226f928c"
   
-  url "https://github.com/airmessage/airmessage-server/releases/download/v#{version}/AirMessage-v#{version}.zip",
+  url "https://github.com/airmessage/airmessage-server/releases/download/v#{version}/AirMessage-#{version}.zip",
       verified: "github.com/airmessage"
   name "AirMessage"
   desc "AirMessage's message relay server"

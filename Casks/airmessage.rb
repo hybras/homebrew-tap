@@ -1,13 +1,11 @@
 cask "airmessage" do
+  version "4.0.1"
+  sha256 "f7bbc4a68e5e4eccbf46b436e46c423577841d093aa8548e2a783398b213aff4"
 
-  version "4.0.0"
-
-  sha256 "e86329a2a5ce0d4b816341f37a1824fca0bcb2233f94eb27def2116a226f928c"
-  
   url "https://github.com/airmessage/airmessage-server/releases/download/v#{version}/AirMessage-#{version}.zip",
       verified: "github.com/airmessage"
   name "AirMessage"
-  desc "AirMessage's message relay server"
+  desc "'s message relay server"
   homepage "https://airmessage.org/"
 
   livecheck do
@@ -26,5 +24,4 @@ cask "airmessage" do
     "~/Library/Preferences/me.tagavari.airmessageserver.plist",
     "~/Library/WebKit/Databases/___IndexedDB/me.tagavari.airmessageserver",
   ]
-
 end

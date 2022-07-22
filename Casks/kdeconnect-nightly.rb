@@ -14,6 +14,7 @@ cask "kdeconnect-nightly" do
 
   app "kdeconnect-indicator.app", target: "KDE Connect.app"
   binary "#{appdir}/KDE Connect.app/Contents/MacOS/kdeconnect-cli"
+  binary "#{appdir}/KDE Connect.app/Contents/MacOS/kdeconnect-sms"
 
   uninstall quit: "org.kde.kdeconnect"
 

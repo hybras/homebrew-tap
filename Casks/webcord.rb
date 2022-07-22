@@ -1,11 +1,11 @@
 cask "webcord" do
-  version "3.4.0"
+  version "3.5.1"
 
   if Hardware::CPU.intel?
-    sha256 "d8277caccbdc97e473142e1183b26eb97e380600164747b4babf3c6f376f67d7"
+    sha256 "350492f4ef13627b869e613c327695c1f9234a07a66540fbd168c9a13a77df9a"
     url "https://github.com/SpacingBat3/WebCord/releases/download/v#{version}/WebCord-#{version}-x64.dmg"
   else
-    sha256 "d3b40853bf1efd0a1597ac5612a600e145c962070ff5804a7e9e1fb75a414cc3"
+    sha256 "89f769e1faf464b01f60520f3b304e5e9c342c114de5d79f0da890d08c766ef5"
     url "https://github.com/SpacingBat3/WebCord/releases/download/v#{version}/WebCord-#{version}-arm64.dmg"
   end
   name "WebCord"

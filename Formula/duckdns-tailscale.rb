@@ -7,15 +7,15 @@ class DuckdnsTailscale < Formula
   depends_on "tailscale"
 
   def install
-    bin.install "duckdns"
+    bin.install "duckdns-ts"
   end
 
   test do
-    system bin/"duckdns"
+    system bin/"duckdns-ts"
   end
 
   service do
-    run bin/"duckdns"
+    run bin/"duckdns-ts"
     run_type :interval
     interval 300
     log_path var / "log" / "duckdns.log"

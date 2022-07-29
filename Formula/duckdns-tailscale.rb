@@ -1,8 +1,8 @@
 class DuckdnsTailscale < Formula
   desc "Dynamic dns client that fetches ip from tailscale"
   homepage "https://github.com/hybras/duckdns"
-  url "https://github.com/hybras/duckdns/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "79ed573a8168fd0035c38f51a7bd426c61394af715fa5b052f40e9fbb028c99d"
+  url "https://github.com/hybras/duckdns/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "9b56cf9c02d3d4735fe8ec443f8d190afbca6d48680da39f6374303430d37f5d"
 
   depends_on "tailscale"
 

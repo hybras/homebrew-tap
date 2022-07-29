@@ -1,1 +1,1 @@
-brew cat "$1" | bat --language=rb
+brew cat "$@" | bat --language=rb

@@ -1,11 +1,11 @@
 cask "airmessage" do
-  version "4.0.1"
-  sha256 "f7bbc4a68e5e4eccbf46b436e46c423577841d093aa8548e2a783398b213aff4"
+  version "4.1.0"
+  sha256 "513647d55e8354785ec3bb0623c79fd6160d25755f20fa97ac75e85a707726da"
 
   url "https://github.com/airmessage/airmessage-server/releases/download/v#{version}/AirMessage-#{version}.zip",
       verified: "github.com/airmessage"
   name "AirMessage"
-  desc "iMessage relay server"
+  desc "IMessage relay server"
   homepage "https://airmessage.org/"
 
   app "AirMessage.app"

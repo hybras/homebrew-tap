@@ -1,6 +1,6 @@
 cask "airmessage" do
-  version "4.1.0"
-  sha256 "513647d55e8354785ec3bb0623c79fd6160d25755f20fa97ac75e85a707726da"
+  version "4.1.1"
+  sha256 "bd3fcd559333fe61ec405da4f1477e402920c537c9cee90ef10179c4572edbff"
 
   url "https://github.com/airmessage/airmessage-server/releases/download/v#{version}/AirMessage-#{version}.zip",
       verified: "github.com/airmessage"

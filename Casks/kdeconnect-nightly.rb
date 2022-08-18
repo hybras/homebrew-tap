@@ -1,6 +1,6 @@
 cask "kdeconnect-nightly" do
-  version "1615"
-  sha256 "c2729def981e85ddb174150c03cfba19479d3f370f7b0222af02ab55c090c690"
+  version "1622"
+  sha256 "7f93f49b46f3f567344fdae62cbc9f6f3a9dc208398ff66c765dfdbff2a03e9a"
 
   url "https://binary-factory.kde.org/view/MacOS/job/kdeconnect-kde_Nightly_macos/#{version}/artifact/kdeconnect-kde-master-#{version}-macos-64-clang.dmg"
   name "KDE Connect"

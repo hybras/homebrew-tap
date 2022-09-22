@@ -14,13 +14,6 @@ class Gtkcord4 < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
-  service do
-    run bin / "gtkcord4"
-    log_path var / "log" / "gtkcord4.log"
-    error_log_path var / "log" / "gtkcord4.log"
-    process_type :interactive
-  end
-
   test do
     system bin.to_s/"gtkcord", "--help"
   end

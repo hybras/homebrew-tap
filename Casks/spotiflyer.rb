@@ -1,6 +1,6 @@
 cask "spotiflyer" do
-  version "3.6.1"
-  sha256 "0875bb88ffb0e0fbc0858f87dd92eca799c534bfb66507640e7f13e83dec4632"
+  version "3.6.2"
+  sha256 "00dea19170dd6896bdb20ae05e18aeaca822ea8392a3af399afa43913df3406b"
 
   url "https://github.com/Shabinder/SpotiFlyer/releases/download/v#{version}/SpotiFlyer-#{version}.dmg"
   name "SpotiFlyer"

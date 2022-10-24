@@ -11,6 +11,8 @@ cask "kdeconnect" do
     url "https://binary-factory.kde.org/job/kdeconnect-kde_Release_macos/lastSuccessfulBuild/artifact/"
     regex(/href=.*?kdeconnect-kde[._-]v?(\d+(?:[.-]\d+)+)-macos-64-clang\.dmg/i)
   end
+  
+  depends_on formula: "dbus"
 
   app "kdeconnect-indicator.app", target: "KDE Connect.app"
   binary "#{appdir}/KDE Connect.app/Contents/MacOS/kdeconnect-cli"
@@ -28,5 +30,4 @@ cask "kdeconnect" do
     "~/Library/Preferences/org.kde.kdeconnect.plist",
   ]
 
-  caveats "KDE Connect needs dbus. Install it with `brew install dbus`"
 end

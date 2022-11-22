@@ -1,6 +1,6 @@
 cask "kdeconnect-nightly" do
-  version "1684"
-  sha256 "8c47ab7713be7ccb2d0263cc3b0974c3bb7105464c42a192ca6635831ff99d06"
+  version "1691"
+  sha256 "8965022cc9066db0e0b67fba72b638dae2a3c2bdc528d5b8dd60f2bbafae8756"
 
   url "https://binary-factory.kde.org/view/MacOS/job/kdeconnect-kde_Nightly_macos/#{version}/artifact/kdeconnect-kde-master-#{version}-macos-64-clang.dmg"
   name "KDE Connect"
@@ -11,7 +11,7 @@ cask "kdeconnect-nightly" do
     url "https://binary-factory.kde.org/job/kdeconnect-kde_Nightly_macos/lastStableBuild/artifact/"
     regex(/href=.*?kdeconnect-kde-master-(\d+)-macos-64-clang\.dmg/i)
   end
-  
+
   depends_on formula: "dbus"
 
   app "kdeconnect-indicator.app", target: "KDE Connect.app"
@@ -29,5 +29,4 @@ cask "kdeconnect-nightly" do
     "~/Library/Preferences/kdeconnect_share",
     "~/Library/Preferences/org.kde.kdeconnect.plist",
   ]
-
 end

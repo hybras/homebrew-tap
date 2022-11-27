@@ -47,6 +47,6 @@ class Gtkcord4 < Formula
   end
 
   test do
-    system bin.to_s/"gtkcord", "--help"
+    system bin.to_s/"gtkcord4", "--help"
   end
 end

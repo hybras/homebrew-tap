@@ -14,8 +14,6 @@ env:
     gtkcord4
     pijul
     sshpass
-    kdeconnect
-    kdeconnect-nightly
     airmessage
     kdeconnect
     kdeconnect-nightly

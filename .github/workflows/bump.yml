@@ -23,7 +23,7 @@ env:
 
 jobs:
   bump-formula:
-    runs-on: macos-12
+    runs-on: ubuntu-latest
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master

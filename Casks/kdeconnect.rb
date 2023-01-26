@@ -1,6 +1,6 @@
 cask "kdeconnect" do
-  version "22.12.1-1190"
-  sha256 "381fd089a86df1722f56c63ac80364563b172474c2614047f2506758d521904f"
+  version "22.12.1-1197"
+  sha256 "0c5df4aec76b156e8381b1f729266bd90326ec2600a6d0563526b51046b22306"
 
   url "https://binary-factory.kde.org/job/kdeconnect-kde_Release_macos/#{version.match(/\d+(?:[.-](\d+))+/)[1]}/artifact/kdeconnect-kde-#{version}-macos-clang-x86_64.dmg"
   name "KDE Connect"

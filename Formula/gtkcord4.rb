@@ -7,8 +7,8 @@ class Gtkcord4 < Formula
 
   depends_on "go" => :build
   depends_on "gobject-introspection" => :build
-  depends_on "pkg-config" => :build
   depends_on "gtk4" => :build
+  depends_on "pkg-config" => :build
   depends_on "libcanberra"
 
   def install
@@ -37,7 +37,7 @@ class Gtkcord4 < Formula
       libxext
     ]
 
-    for dep in deps do
+    deps.each do |dep|
       ENV.prepend_path "PKG_CONFIG_PATH", Formula[dep].opt_lib/"pkgconfig"
     end
 

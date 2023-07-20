@@ -1,5 +1,4 @@
 cask "shrugs" do
-  # This cask obeys semver. The 4th number (the one oafter the v) is from sparkle and incremented on new versions / releases.
   version "1.2.2-v74"
   sha256 "7d175210fb33681ee947a5556fe0b2b59b23af9043b5e74bb0e194621f59ea75"
 

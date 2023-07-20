@@ -25,6 +25,6 @@ class Pijul < Formula
   end
 
   test do
-    system "pijul"
+    system "#{bin}/pijul"
   end
 end

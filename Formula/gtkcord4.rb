@@ -1,8 +1,8 @@
 class Gtkcord4 < Formula
   desc "Gtk4 Discord client"
   homepage "https://github.com/diamondburned/gtkcord4"
-  url "https://github.com/diamondburned/gtkcord4/archive/refs/tags/v0.0.9.tar.gz"
-  sha256 "f3af7febb410c50cdf4a2d6db89f139200861ee60ab29b764a43d4dcf208a2e0"
+  url "https://github.com/diamondburned/gtkcord4/archive/refs/tags/v0.0.11-1.tar.gz"
+  sha256 "1708c599640deb6f7fb4d790808ceabb2f67078e4085b5a20732e101751473a9"
   license "GPL-3.0-or-later"
 
   depends_on "go" => :build

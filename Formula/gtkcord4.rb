@@ -6,9 +6,9 @@ class Gtkcord4 < Formula
   license "GPL-3.0-or-later"
 
   depends_on "go" => :build
-  depends_on "gobject-introspection" => :build
-  depends_on "gtk4" => :build
   depends_on "pkg-config" => :build
+  depends_on "gobject-introspection"
+  depends_on "gtk4"
   depends_on "libcanberra"
 
   def install

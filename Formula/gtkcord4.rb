@@ -12,37 +12,6 @@ class Gtkcord4 < Formula
   depends_on "libcanberra"
 
   def install
-    deps = %w[
-      glib
-      pcre2
-      pango
-      gdk-pixbuf
-      graphene
-      harfbuzz
-      libpng
-      libjpeg
-      freetype
-      cairo
-      pixman
-      fontconfig
-      graphite2
-      libxcb
-      fribidi
-      libtiff
-      libxau
-      libpthread-stubs
-      libxdmcp
-      libxrender
-      libx11
-      libxext
-    ]
-
-    deps.each do |dep|
-      ENV.prepend_path "PKG_CONFIG_PATH", Formula[dep].opt_lib/"pkgconfig"
-    end
-
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["xorgproto"].opt_share/"pkgconfig"
-
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 

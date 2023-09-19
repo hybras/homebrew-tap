@@ -6,7 +6,8 @@ on:
         description: Custom list of formulae to livecheck and bump if outdated
         required: false
   schedule:
-    - cron: '47 5 * * 4'
+    - cron: '5 4 5 * *'
+    - cron: '5 4 26 * *'
 
 env:
   FORMULAE: >

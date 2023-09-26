@@ -17,11 +17,11 @@ class AsciidoctorMathematicalDeps < Formula
   uses_from_macos "ruby"
 
   # fonts
-  # depends_on "font-jsmath-cmex10"
-  # depends_on "font-jsmath-cmmi10"
-  # depends_on "font-jsmath-cmr10"
-  # depends_on "font-jsmath-cmsy10"
-  # depends_on "font-jsmath-cmex10"
+  # depends_on cask: "homebrew/homebrew-cask-fonts/font-jsmath-cmex10"
+  # depends_on cask: "homebrew/homebrew-cask-fonts/font-jsmath-cmmi10"
+  # depends_on cask: "homebrew/homebrew-cask-fonts/font-jsmath-cmr10"
+  # depends_on cask: "homebrew/homebrew-cask-fonts/font-jsmath-cmsy10"
+  # depends_on cask: "homebrew/homebrew-cask-fonts/font-jsmath-cmex10"
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel

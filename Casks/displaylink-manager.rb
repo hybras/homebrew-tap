@@ -7,12 +7,12 @@ cask "displaylink-manager" do
   desc "Drivers for DisplayLink dock, adapter or monitor"
   homepage "https://www.synaptics.com/products/displaylink-graphics/downloads/macos"
 
-  pkg "DisplayLink Manager Graphics Connectivity#{version}-EXE.pkg"
-
   livecheck do
     # TODO
     skip "No version information available"
   end
+
+  pkg "DisplayLink Manager Graphics Connectivity#{version}-EXE.pkg"
 
   uninstall pkgutil: "com.displaylink.displaylinkmanagerapp"
 end

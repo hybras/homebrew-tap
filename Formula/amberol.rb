@@ -1,6 +1,3 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Amberol < Formula
   desc "Music Player"
   homepage "https://apps.gnome.org/app/io.bassi.Amberol/"
@@ -23,7 +20,6 @@ class Amberol < Formula
   depends_on "libadwaita"
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
     mkdir "build" do
       system "meson", *std_meson_args, ".."
       system "ninja", "-v"

@@ -28,6 +28,6 @@ class Pijul < Formula
     system bin/"pijul", "init"
     %w[haunted house].each { |f| touch testpath/f }
     system bin/"pijul", "add", "haunted", "house"
-    assert_equal "haunted\nhouse", shell_output("#{bin}/pijul list).strip
+    assert_equal "haunted\nhouse", shell_output("#{bin}/pijul list").strip
   end
 end

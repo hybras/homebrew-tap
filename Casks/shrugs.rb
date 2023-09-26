@@ -1,6 +1,6 @@
 cask "shrugs" do
-  version "1.2.2-v74"
-  sha256 "7d175210fb33681ee947a5556fe0b2b59b23af9043b5e74bb0e194621f59ea75"
+  version "1.2.4-v84"
+  sha256 "27deecb1925132a35f4acf489d058f96259320ccf5285bfcaa7c44d391fb9033"
 
   url "https://shrugs.app/downloads/Shrugs.app-#{version}.zip"
   name "Shrugs"

@@ -13,6 +13,6 @@ class HomebrewCreatezap < Formula
   end
 
   test do
-    system "brew-createzap"
+    system bin/"brew-createzap"
   end
 end

@@ -16,6 +16,8 @@ env:
     pijul
     sshpass
     airmessage
+    arna
+    cider
     kdeconnect
     kdeconnect-nightly
     shrugs

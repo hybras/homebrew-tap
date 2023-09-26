@@ -1,6 +1,6 @@
 class Pijul < Formula
   desc "Sound and fast distributed version control system"
-  homepage "https://pijul.com"
+  homepage "https://pijul.org"
   url "https://static.crates.io/crates/pijul/pijul-1.0.0-beta.6.crate"
   sha256 "b7757b1c39487a70d82d5e5f5e432e7d9cf3c24cb837b90cf1c436da8edba802"
   license "GPL-2.0-or-later"
@@ -25,6 +25,9 @@ class Pijul < Formula
   end
 
   test do
-    system "#{bin}/pijul"
+    system bin/"pijul", "init"
+    %w[haunted house].each { |f| touch testpath/f }
+    system bin/"pijul", "add", "haunted", "house"
+    assert_equal "haunted\nhouse", shell_output("#{bin}/pijul list).strip
   end
 end

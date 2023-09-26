@@ -7,14 +7,14 @@ class Gtkcord4 < Formula
 
   depends_on "go" => :build
   depends_on "pkg-config" => :build
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gobject-introspection"
+  depends_on "gstreamer"
   depends_on "gtk4"
   depends_on "libcanberra"
-  depends_on "gdk-pixbuf"
-  depends_on "cairo"
-  depends_on "glib"
   depends_on "pango"
-  depends_on "gstreamer"
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")

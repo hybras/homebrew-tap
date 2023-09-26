@@ -8,10 +8,10 @@ class Sshpass < Formula
   # depends_on 'gnu-sed' => :build
 
   def install
-    system "./configure", 
+    system "./configure",
            *std_configure_args, # brew
            "--disable-silent-rules", # brew
-           "--disable-debug", 
+           "--disable-debug",
            "--disable-dependency-tracking",
            # "--prefix=#{prefix}",
            "--mandir=#{man}"

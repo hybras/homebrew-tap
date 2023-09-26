@@ -2,18 +2,19 @@
 class AsciidoctorMathematicalDeps < Formula
   desc "Convert math to images in asciidoc files"
   homepage "https://docs.asciidoctor.org/asciidoctor/latest/stem/mathematical/"
-  license "MIT"
   url "https://github.com/asciidoctor/asciidoctor-mathematical/archive/refs/tags/v0.3.5.tar.gz"
   sha256 "1485a042cf7d7835659bebf287449be7918337738d9fa2ef6044810e9129fb89"
+  license "MIT"
   head "https://github.com/asciidoctor/asciidoctor-mathematical"
 
-  uses_from_macos "ruby"
-
-  depends_on "glib"
-  depends_on "gdk-pixbuf"
-  depends_on "cairo"
-  depends_on "pango"
   depends_on "cmake" => :build
+  depends_on "cmake" => :build
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
+  depends_on "pango"
+
+  uses_from_macos "ruby"
 
   # fonts
   # depends_on "font-jsmath-cmex10"
@@ -21,7 +22,6 @@ class AsciidoctorMathematicalDeps < Formula
   # depends_on "font-jsmath-cmr10"
   # depends_on "font-jsmath-cmsy10"
   # depends_on "font-jsmath-cmex10"
-
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel

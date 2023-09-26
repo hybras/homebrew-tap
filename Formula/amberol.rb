@@ -10,17 +10,17 @@ class Amberol < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "rust" => :build
-  depends_on "python" => :build
   depends_on "pkg-config" => :build
+  depends_on "python" => :build
+  depends_on "rust" => :build
   depends_on "xz" => :build
+  depends_on "dbus"
+  depends_on "desktop-file-utils"
+  depends_on "gst-plugins-bad"
+  depends_on "gst-plugins-base"
+  depends_on "gstreamer"
   depends_on "gtk4"
   depends_on "libadwaita"
-  depends_on "gstreamer"
-  depends_on "gst-plugins-base"
-  depends_on "gst-plugins-bad"
-  depends_on "desktop-file-utils"
-  depends_on "dbus"
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
@@ -30,7 +30,7 @@ class Amberol < Formula
       system "ninja", "install", "-v"
     end
   end
-  
+
   def post_install
     system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
     system "#{Formula["gtk4"].opt_bin}/gtk4-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"

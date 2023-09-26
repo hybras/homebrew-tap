@@ -15,7 +15,7 @@ class DuckdnsTailscale < Formula
   end
 
   service do
-    run bin/"duckdns-ts"
+    run opt_bin/"duckdns-ts"
     run_type :interval
     interval 300
     log_path var / "log" / "duckdns.log"

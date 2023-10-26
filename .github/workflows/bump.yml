@@ -50,5 +50,5 @@ jobs:
       - name: Bump Formula
         uses: Homebrew/actions/bump-formulae@master
         with:
-          token: ${{ secrets.PAT_GITHUB }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           formulae: ${{ github.event.inputs.formulae || env.FORMULAE }}

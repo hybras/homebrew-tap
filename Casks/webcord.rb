@@ -1,13 +1,13 @@
 cask "webcord" do
-  version "4.4.1"
+  version "4.5.0"
 
   on_arm do
-    sha256 "47699787aeb3af0267c30691d2d031d9989376a301e3722976cda0ee2c5fddcf"
+    sha256 "04e20a7392273d6fe9ddbd461695ab6373eb4b457c35e354454174b89d040471"
 
     url "https://github.com/SpacingBat3/WebCord/releases/download/v#{version}/WebCord-#{version}-arm64.dmg"
   end
   on_intel do
-    sha256 "f16a544be056642d418ef99435d27e0531583bc3c422e69a597e6925d163cfeb"
+    sha256 "f943d53b83b2e576155161226676af5e510d695b632ca985aec8a27ff517603b"
 
     url "https://github.com/SpacingBat3/WebCord/releases/download/v#{version}/WebCord-#{version}-x64.dmg"
   end

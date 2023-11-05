@@ -1,8 +1,8 @@
 class Pijul < Formula
   desc "Sound and fast distributed version control system"
   homepage "https://pijul.org"
-  url "https://static.crates.io/crates/pijul/pijul-1.0.0-beta.6.crate"
-  sha256 "b7757b1c39487a70d82d5e5f5e432e7d9cf3c24cb837b90cf1c436da8edba802"
+  url "https://static.crates.io/crates/pijul/pijul-1.0.0-beta.7.crate"
+  sha256 "3678fa50d92ff68a5907a9b4208e9ad15cb71411d41b2925702d6ff3d5f93250"
   license "GPL-2.0-or-later"
 
   livecheck do

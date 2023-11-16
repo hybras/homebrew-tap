@@ -13,8 +13,6 @@ class Amberol < Formula
   depends_on "xz" => :build
   depends_on "dbus"
   depends_on "desktop-file-utils"
-  depends_on "gst-plugins-bad"
-  depends_on "gst-plugins-base"
   depends_on "gstreamer"
   depends_on "gtk4"
   depends_on "libadwaita"

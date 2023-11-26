@@ -19,7 +19,6 @@ env:
     kdeconnect
     kdeconnect-nightly
     shrugs
-    spotiflyer
     webcord
 
 jobs:

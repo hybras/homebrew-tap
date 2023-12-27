@@ -3,7 +3,10 @@ on:
   workflow_dispatch:
     inputs:
       formulae:
-        description: Custom list of formulae to livecheck and bump if outdated
+        description: Custom (space/newline seperated) list of formulae to livecheck and bump if outdated
+        required: false
+      casks:
+        description: Custom (space/newline seperated) list of casks to livecheck and bump if outdated
         required: false
   schedule:
     - cron: '5 4 5 * *'
@@ -14,6 +17,8 @@ env:
     gtkcord4
     pijul
     sshpass
+
+  CASKS: >
     airmessage
     arna
     kdeconnect
@@ -45,7 +50,8 @@ jobs:
       - name: Tap hybras/tap
         run: brew tap hybras/tap
       - name: Bump Formula
-        uses: Homebrew/actions/bump-formulae@master
+        uses: Homebrew/actions/bump-packages@master
         with:
           token: ${{ secrets.PAT_GITHUB }}
           formulae: ${{ github.event.inputs.formulae || env.FORMULAE }}
+          casks: ${{ github.event.inputs.casks || env.CASKS }}

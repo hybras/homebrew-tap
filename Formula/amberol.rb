@@ -18,11 +18,9 @@ class Amberol < Formula
   depends_on "libadwaita"
 
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "_builddir", ".", *std_meson_args
+    system "meson", "compile", "-C", "_builddir"
+    system "meson" "install" "-C" "_builddir", *std_meson_args
   end
 
   def post_install

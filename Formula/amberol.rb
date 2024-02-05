@@ -20,7 +20,7 @@ class Amberol < Formula
   def install
     system "meson", "setup", "_builddir", ".", *std_meson_args
     system "meson", "compile", "-C", "_builddir"
-    system "meson" "install" "-C" "_builddir", *std_meson_args
+    system "meson", "install", "-C", "_builddir", *std_meson_args
   end
 
   def post_install

@@ -1,3 +1,5 @@
+# [R] Minimum notability requirements not reached, more details from https://github.com/Homebrew/homebrew-cask/pull/116236
+
 cask "airmessage" do
   version "4.1.4"
   sha256 "053dd2c33354f3e183088b83073ff9bd25e806824dbc1ccfed2b13239e23420d"
@@ -7,6 +9,8 @@ cask "airmessage" do
   name "AirMessage"
   desc "IMessage relay server"
   homepage "https://airmessage.org/"
+
+  auto_updates true
 
   app "AirMessage.app"
 

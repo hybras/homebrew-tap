@@ -1,4 +1,4 @@
-cask "kdeconnect-nightly" do
+cask "kdeconnect@nightly" do
   version "3862"
   sha256 intel: "b7900c71887c589c1c460b70a5bcc061a921215aee54b6e68ce338d98a34997e", arm: "229c99456e101e67cc714ffa340e50e90f5d9d02d6f8d6027008b4bca1889da1"
   arch intel: "x86_64", arm: "arm64"

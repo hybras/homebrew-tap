@@ -1,14 +1,15 @@
 cask "kdeconnect-nightly" do
-  version "2075"
-  sha256 "c71460832257d6caaf6486b3c98ae0763b98129bc5c2b270741a56f642aee5b0"
+  version "3862"
+  sha256 intel: "b7900c71887c589c1c460b70a5bcc061a921215aee54b6e68ce338d98a34997e", arm: "229c99456e101e67cc714ffa340e50e90f5d9d02d6f8d6027008b4bca1889da1"
+  arch intel: "x86_64", arm: "arm64"
 
-  url "https://binary-factory.kde.org/view/MacOS/job/kdeconnect-kde_Nightly_macos/#{version}/artifact/kdeconnect-kde-master-#{version}-macos-clang-x86_64.dmg"
+  url "https://cdn.kde.org/ci-builds/network/kdeconnect-kde/master/macos-#{arch}/kdeconnect-kde-master-#{version}-macos-clang-#{arch}.dmg"
   name "KDE Connect"
   desc "Enabling communication between all your devices"
   homepage "https://kdeconnect.kde.org/"
 
   livecheck do
-    url "https://binary-factory.kde.org/job/kdeconnect-kde_Nightly_macos/lastStableBuild/artifact/"
+    url "https://cdn.kde.org/ci-builds/network/kdeconnect-kde/master/macos-x86_64/"
     regex(/href=.*?kdeconnect-kde-master-(\d+)-macos-clang-x86_64\.dmg/i)
   end
 

@@ -20,6 +20,8 @@ cask "kdeconnect" do
 
   uninstall quit: "org.kde.kdeconnect"
 
+  disable! date: "2024-05-10", because: "only nightly builds are availible from upstream"
+
   zap trash: [
     "~/Library/Application Support/kpeoplevcard",
     "~/Library/Caches/kdeconnect.sms",

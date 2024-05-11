@@ -32,4 +32,6 @@ cask "kdeconnect@nightly" do
     "~/Library/Preferences/kdeconnect_share",
     "~/Library/Preferences/org.kde.kdeconnect.plist",
   ]
+
+  caveats "Installation may fail due to nightly build artifacts expiring"
 end

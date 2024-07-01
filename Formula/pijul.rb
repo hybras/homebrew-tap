@@ -18,10 +18,7 @@ class Pijul < Formula
   depends_on "zstd" => :build
 
   def install
-    system "tar", "xf", "pijul-#{version}.crate"
-    cd "pijul-#{version}" do
-      system "cargo", "install", *std_cargo_args
-    end
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

@@ -20,7 +20,7 @@ class DarkModeNotify < Formula
   end
 
   service do
-    run [bin/"dark-mode-notify", etc/"onInterfaceThemeChange"]
+    run [opt_bin/"dark-mode-notify", etc/"onInterfaceThemeChange"]
     keep_alive true
     log_path var/"log/dark-mode-notify.log"
     error_log_path var/"log/dark-mode-notify.log"

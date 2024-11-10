@@ -12,6 +12,8 @@ cask "kdeconnect" do
     regex(/href=.*?kdeconnect-kde[._-]v?(\d+(?:[.-]\d+)+)-macos-clang-x86_64\.dmg/i)
   end
 
+  disable! date: "2024-05-10", because: "only nightly builds are availible from upstream"
+
   depends_on formula: "dbus"
 
   app "kdeconnect-indicator.app", target: "KDE Connect.app"
@@ -19,8 +21,6 @@ cask "kdeconnect" do
   binary "#{appdir}/KDE Connect.app/Contents/MacOS/kdeconnect-sms"
 
   uninstall quit: "org.kde.kdeconnect"
-
-  disable! date: "2024-05-10", because: "only nightly builds are availible from upstream"
 
   zap trash: [
     "~/Library/Application Support/kpeoplevcard",

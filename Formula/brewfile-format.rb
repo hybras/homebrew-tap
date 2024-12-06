@@ -1,9 +1,7 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class BrewfileFormat < Formula
-  desc ""
-  homepage ""
+  desc "Format brew bundle files"
+  homepage "https://gitlab.com/hybras/brewfile-format",
+    verified: "gitlab.com/hybras/brewfile-format"
   url "https://gitlab.com/hybras/brewfile-format.git"
   version "0.1.0"
   sha256 "a719d49dc346f91d5b26c9c97564a761ec6783bd8db2f514cfc334aad44b5fae"

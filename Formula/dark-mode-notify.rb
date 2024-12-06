@@ -1,4 +1,7 @@
 class DarkModeNotify < Formula
+  desc "Run a script whenever dark mode changes in macOS"
+  homepage "https://github.com/bouk/dark-mode-notify",
+    verified: "github.com/bouk/dark-mode-notify"
   version "0.1.0"
   license "MIT"
   head "https://github.com/bouk/dark-mode-notify.git", branch: "main"

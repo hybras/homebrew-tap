@@ -5,6 +5,7 @@ class DarkModeNotify < Formula
   license "MIT"
   head "https://github.com/bouk/dark-mode-notify.git", branch: "main"
 
+  depends_on :macos
   uses_from_macos "swift" => :build
 
   def install

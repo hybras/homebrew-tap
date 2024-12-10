@@ -1,11 +1,10 @@
 class BrewfileFormat < Formula
   desc "Format brew bundle files"
-  homepage "https://gitlab.com/hybras/brewfile-format",
-    verified: "gitlab.com/hybras/brewfile-format"
+  homepage "https://gitlab.com/hybras/brewfile-format"
   url "https://gitlab.com/hybras/brewfile-format.git"
   version "0.1.0"
   sha256 "a719d49dc346f91d5b26c9c97564a761ec6783bd8db2f514cfc334aad44b5fae"
-  license "apache OR mit"
+  license any_of: ["Apache-2.0", "MIT"]
   head "https://gitlab.com/hybras/brewfile-format.git", branch: "main"
 
   depends_on "rust" => :build
@@ -23,7 +22,7 @@ class BrewfileFormat < Formula
     # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
     #
     # The installed folder is not in the path, so use the entire path to any
-    # executables being tested: `system "#{bin}/program", "do", "something"`.
+    # executables being tested: `system bin/"program", "do", "something"`.
     system "false"
   end
 end

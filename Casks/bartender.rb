@@ -8,7 +8,7 @@ cask "bartender" do
     sha256 "7f91ad8d0aee86f5c784096d0b3d732f518356d3e1b2b3b9db2e196a0740574b"
   end
 
-  url "https://macbartender.com/B2/updates/#{version.dots_to_hyphens}/Bartender%20#{version.major}.zip"
+  url "https://macbartender.com/B2/updates/#{version.major}-#{version.minor}-#{version.patch}/Bartender%20#{version.major}.zip"
   name "Bartender"
   desc "Menu bar icon organiser"
   homepage "https://www.macbartender.com/"

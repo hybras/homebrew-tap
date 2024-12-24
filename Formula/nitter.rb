@@ -1,8 +1,8 @@
 class Nitter < Formula
   desc "Twitter front-end"
   homepage "https://github.com/zedeus/nitter"
+  license "AGPL-3.0-only"
   deprecate! date: "2024-12-10", because: :unmaintained
-  license " AGPL-3.0-only"
   head "https://github.com/zedeus/nitter.git"
 
   depends_on "nim" => :build

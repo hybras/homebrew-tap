@@ -1,9 +1,9 @@
 cask "kdeconnect@nightly" do
   arch intel: "x86_64", arm: "arm64"
 
-  version "4864"
-  sha256 intel: "d6f3293c322bcbd4769760b7506af96a104c6254780c38d9019fc4aee702c615",
-         arm:   "b1d3007e81c9f669559e079636a536cd4a1c6b6a8f2ca1f272465479afe235dd"
+  version "4991"
+  sha256 intel: "a5e90ad177860c799a1426887c4ecede69c3fbf43c139420d9209fba65d4776d",
+         arm:   "fc4c459f425afef509aaa33dd667535105c63fdf380a0a5bb5c8afc593f546bd"
 
   url "https://cdn.kde.org/ci-builds/network/kdeconnect-kde/master/macos-#{arch}/kdeconnect-kde-master-#{version}-macos-clang-#{arch}.dmg"
   name "KDE Connect"

@@ -1,9 +1,8 @@
 class BrewfileFormat < Formula
   desc "Format brew bundle files"
   homepage "https://gitlab.com/hybras/brewfile-format"
-  url "https://gitlab.com/hybras/brewfile-format.git"
-  version "0.1.0"
-  sha256 "a719d49dc346f91d5b26c9c97564a761ec6783bd8db2f514cfc334aad44b5fae"
+  url "https://gitlab.com/hybras/brewfile-format/-/archive/v0.2.0/brewfile-format-v0.2.0.tar.gz"
+  sha256 "52b08e5153f9889eb385d177425ac371596a97edf2607cef1206e06d8b5c041c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://gitlab.com/hybras/brewfile-format.git", branch: "main"
 

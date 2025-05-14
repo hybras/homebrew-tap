@@ -8,23 +8,21 @@ cask "bartender" do
     sha256 "7f91ad8d0aee86f5c784096d0b3d732f518356d3e1b2b3b9db2e196a0740574b"
   end
 
-  url "https://macbartender.com/B2/updates/#{version.major}-#{version.minor}-#{version.patch}/Bartender%20#{version.major}.zip"
+  v = version.to_s.split(".")
+
+  url "https://macbartender.com/B2/updates/#{v[0]}-#{v[1]}-#{v[2]}/Bartender%20#{v[0]}.zip"
   name "Bartender"
   desc "Menu bar icon organiser"
   homepage "https://www.macbartender.com/"
 
   livecheck do
-    url "https://www.macbartender.com/B2/updates/AppcastB#{version.major}.xml"
-    regex(%r{https://macbartender.com/B2/updates/(\d+(?:-\d+)+)/Bartender%20#{version.major}.zip}i)
-    strategy :page_match do |page, regex|
-      page.scan(regex)&.map { |match| match[0].tr("-", ".") }
-    end
+    skip "Pinned version"
   end
 
   auto_updates true
   depends_on macos: ">= :big_sur"
 
-  app "Bartender #{version.major}.app"
+  app "Bartender #{v[0]}.app"
 
   uninstall launchctl: "com.surteesstudios.Bartender.BartenderInstallHelper",
             quit:      "com.surteesstudios.Bartender",

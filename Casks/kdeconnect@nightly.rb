@@ -1,9 +1,9 @@
 cask "kdeconnect@nightly" do
   arch intel: "x86_64", arm: "arm64"
 
-  version "4991"
-  sha256 intel: "a5e90ad177860c799a1426887c4ecede69c3fbf43c139420d9209fba65d4776d",
-         arm:   "fc4c459f425afef509aaa33dd667535105c63fdf380a0a5bb5c8afc593f546bd"
+  version "5048"
+  sha256 intel: "40a971a8fc30dd0adfc300fc5e8050580a5ef3661db771538a7e03e8387cb565",
+         arm:   "db8dd04720e9b198a920fd1e8082c8531f300dbffbed3af1aa356b78262ccb24"
 
   url "https://cdn.kde.org/ci-builds/network/kdeconnect-kde/master/macos-#{arch}/kdeconnect-kde-master-#{version}-macos-clang-#{arch}.dmg"
   name "KDE Connect"
@@ -17,7 +17,7 @@ cask "kdeconnect@nightly" do
 
   depends_on formula: "dbus"
 
-  app "kdeconnect-indicator.app", target: "KDE Connect.app"
+  app "KDE Connect.app"
   binary "#{appdir}/KDE Connect.app/Contents/MacOS/kdeconnect-cli"
   binary "#{appdir}/KDE Connect.app/Contents/MacOS/kdeconnect-sms"
 

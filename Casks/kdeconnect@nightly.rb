@@ -2,8 +2,8 @@ cask "kdeconnect@nightly" do
   arch intel: "x86_64", arm: "arm64"
 
   version "5081"
-  sha256 intel: "0e6d038f1fab5ff8d529e55f75b3d019a41a45f56b4c46fae40aaa512d9d229b",
-         arm:   "f49e5c103a5592d6038afa6293c8a5063d64b2162ca08d2120df6d863c48a086",
+  sha256 intel:        "0e6d038f1fab5ff8d529e55f75b3d019a41a45f56b4c46fae40aaa512d9d229b",
+         arm:          "f49e5c103a5592d6038afa6293c8a5063d64b2162ca08d2120df6d863c48a086",
          arm64_linux:  "0",
          x86_64_linux: "0"
 

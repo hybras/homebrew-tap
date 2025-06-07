@@ -3,7 +3,7 @@ cask "kdeconnect@nightly" do
 
   version "5048"
   sha256 intel: "40a971a8fc30dd0adfc300fc5e8050580a5ef3661db771538a7e03e8387cb565",
-         arm:   "db8dd04720e9b198a920fd1e8082c8531f300dbffbed3af1aa356b78262ccb24"
+         arm:   "db8dd04720e9b198a920fd1e8082c8531f300dbffbed3af1aa356b78262ccb24",
          arm64_linux:  "0",
          x86_64_linux: "0"
 

@@ -7,5 +7,7 @@ cask "arna" do
   desc "Google Translate App"
   homepage "https://github.com/MahanRahmati/translate"
 
+  disable! date: "2024-07-12", because: :unmaintained
+
   app "Translate.app", target: "Arna Translate.app"
 end

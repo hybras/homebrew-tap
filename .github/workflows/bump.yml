@@ -19,7 +19,6 @@ env:
 
   CASKS: >
     airmessage
-    arna
     kdeconnect@nightly
     shrugs
     webcord

@@ -1,3 +1,4 @@
+disable! date: "2024-07-12", because: :repo_archived
 cask "arna" do
   version "2.1.0"
   sha256 "81c7d29f4ad99f34062d028cf22e828314ac371aa594b36ba9bef3db5243d580"

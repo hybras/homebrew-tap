@@ -13,6 +13,7 @@ jobs:
       actions: read
       checks: read
       contents: write
+      packages: write
       issues: read
       pull-requests: write
     steps:

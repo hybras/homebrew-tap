@@ -16,6 +16,6 @@ class Sshpass < Formula
   end
 
   test do
-    system "#{bin}/sshpass"
+    system "#{bin}/sshpass", "-h"
   end
 end

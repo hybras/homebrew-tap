@@ -7,6 +7,8 @@ on:
 jobs:
   bump-formula:
     runs-on: macos-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
@@ -30,5 +32,6 @@ jobs:
       - name: Bump Formula
         uses: Homebrew/actions/bump-packages@master
         with:
-          token: ${{ secrets.PAT_GITHUB }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           casks: 'kdeconnect@nightly'
+      

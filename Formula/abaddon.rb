@@ -51,7 +51,7 @@ class Abaddon < Formula
   end
 
   test do
-    assert_predicate bin/"abaddon", :exist?
+    assert_path_exists bin/"abaddon"
     assert_predicate bin/"abaddon", :executable?
   end
 end

@@ -5,8 +5,6 @@ class Abaddon < Formula
   sha256 "a858fca424468a304e3cfc30be9b9982f3fbf078a897cb19a36a0da77fa02d41"
   license "GPL-3.0-only"
 
-  depends_on :macos
-
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
@@ -14,6 +12,7 @@ class Abaddon < Formula
   depends_on "gtkmm3"
   depends_on "libhandy"
   depends_on "libsodium"
+  depends_on :macos
   depends_on "nlohmann-json"
   depends_on "openssl@3"
   depends_on "opus"

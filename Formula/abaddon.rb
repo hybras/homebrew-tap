@@ -13,7 +13,7 @@ class Abaddon < Formula
   depends_on "libhandy"
   depends_on "libsodium"
   depends_on "nlohmann-json"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "opus"
   depends_on "spdlog"
 

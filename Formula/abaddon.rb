@@ -6,6 +6,7 @@ class Abaddon < Formula
   license "GPL-3.0-only"
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "adwaita-icon-theme"
   depends_on "gtkmm3"
@@ -50,6 +51,7 @@ class Abaddon < Formula
   end
 
   test do
-    system "false"
+    assert_predicate bin/"abaddon", :exist?
+    assert_predicate bin/"abaddon", :executable?
   end
 end

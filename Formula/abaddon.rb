@@ -5,6 +5,11 @@ class Abaddon < Formula
   sha256 "a858fca424468a304e3cfc30be9b9982f3fbf078a897cb19a36a0da77fa02d41"
   license "GPL-3.0-only"
 
+  bottle do
+    root_url "https://ghcr.io/v2/hybras/tap"
+    sha256 cellar: :any, arm64_tahoe: "70bf28d53f5376f9cba3bff28867e6fac8571d5ea6b19e1e3c83330e3eb40bf4"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 

@@ -1,4 +1,5 @@
 name: brew bump
+
 on:
   workflow_dispatch:
     inputs:

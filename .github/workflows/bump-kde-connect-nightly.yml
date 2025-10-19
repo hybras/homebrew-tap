@@ -1,4 +1,5 @@
 name: brew bump kdeconnect@nightly
+
 on:
   workflow_dispatch:
   schedule:
@@ -7,8 +8,6 @@ on:
 jobs:
   bump-formula:
     runs-on: macos-latest
-    permissions:
-      pull-requests: write
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
@@ -32,6 +31,5 @@ jobs:
       - name: Bump Formula
         uses: Homebrew/actions/bump-packages@master
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_GITHUB }}
           casks: 'kdeconnect@nightly'
-      

@@ -12,7 +12,7 @@ cask "kdeconnect" do
     regex(/href=.*?kdeconnect-kde[._-]v?(\d+(?:[.-]\d+)+)-macos-clang-x86_64\.dmg/i)
   end
 
-  disable! date: "2024-05-10", because: "only nightly builds are availible from upstream"
+  disable! date: "2024-05-10", because: "only nightly builds are available from upstream"
 
   depends_on formula: "dbus"
 

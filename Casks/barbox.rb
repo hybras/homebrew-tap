@@ -8,7 +8,7 @@ cask "barbox" do
   desc "Access disposable emails from the menu bar"
   homepage "https://muhammedkpln.github.io/barbox/"
 
-  depends_on macos: ">= :mojave"
+  deprecate! date: "2024-08-15", because: :unmaintained
 
   app "BarBox.app"
 

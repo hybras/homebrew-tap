@@ -14,7 +14,7 @@ cask "shrugs" do
     end
   end
 
-  depends_on macos: ">= :mojave"
+  disable! date: "2023-04-01", because: :discontinued
 
   app "Shrugs.app"
 

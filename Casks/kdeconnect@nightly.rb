@@ -16,7 +16,7 @@ cask "kdeconnect@nightly" do
       regex(/href=.*?kdeconnect-kde-master-(\d+)-macos-clang-x86_64\.dmg/i)
     end
 
-    depends_on macos: ">= :monterey"
+    depends_on macos: ">= :ventura"
     depends_on formula: "dbus"
 
     app "KDE Connect.app"

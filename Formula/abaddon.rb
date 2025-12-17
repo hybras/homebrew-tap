@@ -4,6 +4,7 @@ class Abaddon < Formula
   url "https://github.com/uowuo/abaddon/archive/refs/tags/v0.2.2.tar.gz"
   sha256 "a858fca424468a304e3cfc30be9b9982f3fbf078a897cb19a36a0da77fa02d41"
   license "GPL-3.0-only"
+  head "https://github.com/hybras/abaddon.git", branch: "fix/macos-resource-fallback"
 
   bottle do
     root_url "https://ghcr.io/v2/hybras/tap"
@@ -50,7 +51,7 @@ class Abaddon < Formula
 
   def install
     resources.each do |r|
-      r.unpack("subprojects/#{r.name}")
+      r.stage buildpath/"subprojects"/r.name
     end
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

@@ -1,8 +1,5 @@
 cask "webcord" do
   version "4.11.1"
-
-  disable! date: "2025-11-20", because: 'dmg package is missing from upstream releases, and the cask cannot be updated to a newer version. Please check the upstream repository for updates'
-
   on_arm do
     sha256 "192bf1703b3ee6a52f082a01ff577df2902db53b362bd73323fa81bcb46f6e85"
 
@@ -17,6 +14,8 @@ cask "webcord" do
   name "WebCord"
   desc "Discord and Fosscord web-based client made with the :electron:"
   homepage "https://github.com/SpacingBat3/WebCord"
+
+  disable! date: "2025-11-20", because: "dmg package is missing from upstream releases, and the cask cannot be updated to a newer version. Please check the upstream repository for updates"
 
   app "WebCord.app"
 end

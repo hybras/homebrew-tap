@@ -16,6 +16,8 @@ cask "shrugs" do
 
   disable! date: "2023-04-01", because: :discontinued
 
+  depends_on :macos
+
   app "Shrugs.app"
 
   zap trash: [

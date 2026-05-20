@@ -10,6 +10,8 @@ cask "barbox" do
 
   deprecate! date: "2024-08-15", because: :unmaintained
 
+  depends_on :macos
+
   app "BarBox.app"
 
   zap trash: [

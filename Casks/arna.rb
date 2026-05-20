@@ -9,5 +9,7 @@ cask "arna" do
 
   disable! date: "2024-07-12", because: :unmaintained
 
+  depends_on :macos
+
   app "Translate.app", target: "Arna Translate.app"
 end

@@ -33,3 +33,9 @@ jobs:
         with:
           token: ${{ secrets.PAT_GITHUB }}
           casks: 'kdeconnect@nightly'
+      - name: Enable auto-merge
+        run: |
+          gh pr merge --auto --rebase \
+            "$(gh pr list --search "kdeconnect@nightly" --state open --limit 1 --json number --jq '.[].number')"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

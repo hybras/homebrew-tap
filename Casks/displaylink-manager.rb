@@ -12,6 +12,8 @@ cask "displaylink-manager" do
     skip "No version information available"
   end
 
+  depends_on :macos
+
   pkg "DisplayLink Manager Graphics Connectivity#{version}-EXE.pkg"
 
   uninstall pkgutil: "com.displaylink.displaylinkmanagerapp"

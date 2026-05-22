@@ -19,5 +19,7 @@ cask "webcord" do
   disable! date:    "2025-11-20",
            because: "dmg package is missing"
 
+  depends_on :macos
+
   app "WebCord.app"
 end

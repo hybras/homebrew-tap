@@ -10,6 +10,8 @@ cask "voxa" do
 
   # depends_on macos: ""
 
+  depends_on :macos
+
   app "Voxa.app"
 
   # Documentation: https://docs.brew.sh/Cask-Cookbook#stanza-zap

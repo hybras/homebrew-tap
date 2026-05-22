@@ -15,6 +15,7 @@ cask "kdeconnect" do
   disable! date: "2024-05-10", because: "only nightly builds are available from upstream"
 
   depends_on formula: "dbus"
+  depends_on :macos
 
   app "kdeconnect-indicator.app", target: "KDE Connect.app"
   binary "#{appdir}/KDE Connect.app/Contents/MacOS/kdeconnect-cli"

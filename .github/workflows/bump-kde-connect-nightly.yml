@@ -33,9 +33,16 @@ jobs:
         with:
           token: ${{ secrets.PAT_GITHUB }}
           casks: 'kdeconnect@nightly'
-      - name: Enable auto-merge
+      - name: Find PR number
+        id: find-pr
         run: |
-          gh pr merge --auto --rebase \
-            "$(gh pr list --search "kdeconnect@nightly" --state open --limit 1 --json number --jq '.[].number')"
+          PR_NUMBER=$(gh pr list --search "kdeconnect@nightly" --state open --limit 1 --json number --jq '.[0].number' 2>/dev/null || echo "")
+          echo "pr_number=${PR_NUMBER}" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Merge PR
+        if: steps.find-pr.outputs.pr_number != ''
+        run: |
+          gh pr merge --auto --rebase "${{ steps.find-pr.outputs.pr_number }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

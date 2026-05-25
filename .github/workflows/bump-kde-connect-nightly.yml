@@ -31,8 +31,9 @@ jobs:
       - name: Bump Formula
         uses: Homebrew/actions/bump-packages@master
         with:
-          token: ${{ secrets.PAT_GITHUB }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           casks: 'kdeconnect@nightly'
+          fork: false
       - name: Find PR number
         id: find-pr
         run: |

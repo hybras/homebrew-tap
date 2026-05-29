@@ -1,8 +1,7 @@
 {
+  "rubyLsp.customRubyCommand": "source /opt/homebrew/.vscode/ruby-lsp-activate.sh",
   "rubyLsp.bundleGemfile": "/opt/homebrew/Library/Homebrew/Gemfile",
-  "rubyLsp.rubyExecutablePath": "/opt/homebrew/Library/Homebrew/vendor/portable-ruby/current/bin/ruby",
   "rubyLsp.rubyVersionManager": {
     "identifier": "custom"
   },
-  "rubyLsp.customRubyCommand": "bash custom_ruby_init.sh",
 }

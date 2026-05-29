@@ -50,7 +50,6 @@ jobs:
       - name: Bump Formula
         uses: Homebrew/actions/bump-packages@master
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_GITHUB }}
           formulae: ${{ github.event.inputs.formulae || env.FORMULAE }}
           casks: ${{ github.event.inputs.casks || env.CASKS }}
-          fork: false

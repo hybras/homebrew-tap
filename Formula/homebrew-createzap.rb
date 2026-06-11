@@ -6,6 +6,8 @@ class HomebrewCreatezap < Formula
   sha256 "ea7c8dd6a212ee7c1f074c689df29890399c388c22ea0c622857477200130ed1"
   license "MIT"
 
+  deprecate! date: "2026-06-03", because: :deprecated_upstream
+
   depends_on "fd"
 
   def install

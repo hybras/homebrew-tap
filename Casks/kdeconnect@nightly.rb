@@ -37,4 +37,6 @@ cask "kdeconnect@nightly" do
 
     caveats "Installation may fail due to nightly build artifacts expiring"
   end
+
+  depends_on :macos
 end

@@ -7,21 +7,6 @@ on:
     paths:
       - .github/workflows/autobump.yml
   workflow_dispatch:
-    inputs:
-      formulae:
-        description: Custom (space/newline separated) list of formulae to livecheck and bump if outdated
-        required: false
-        default: >
-          pijul
-          sshpass
-      casks:
-        description: Custom (space/newline separated) list of casks to livecheck and bump if outdated
-        required: false
-        default: >
-          airmessage
-          kdeconnect@nightly
-          shrugs
-          webcord
   schedule:
     - cron: '5 4 5 * *'
     - cron: '5 4 19 * *'
@@ -50,12 +35,10 @@ jobs:
           username: ${{ case(github.event_name == 'schedule', 'BrewTestBot', github.actor) }}
 
       - name: Bump formulae
-        uses: Homebrew/actions/bump-packages@c262868c096d909fc278daa87ed9772967331ea3 # 2026.11.02.1
-        with:
-          fork: false
-          token: ${{ secrets.PAT_GITHUB }}
-          formulae: ${{ github.event.inputs.formulae || env.FORMULAE }}
-          casks: ${{ github.event.inputs.casks || env.CASKS }}
         env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.PAT_GITHUB }}
           HOMEBREW_GIT_COMMITTER_NAME: ${{ steps.git_setup.outputs.name }}
           HOMEBREW_GIT_COMMITTER_EMAIL: ${{ steps.git_setup.outputs.email }}
+          TAP_NAME: ${{ steps.set-up-homebrew.outputs.tap-name }}
+        run: brew bump --no-fork --open-pr --bump-synced --tap="$TAP_NAME"
+

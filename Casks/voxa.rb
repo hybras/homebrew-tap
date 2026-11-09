@@ -8,7 +8,7 @@ cask "voxa" do
   desc "Discord client"
   homepage "https://voxa.peril.lol/"
 
-  # depends_on macos: ""
+  disable! date: "2026-07-17", because:  :unmaintained
 
   depends_on :macos
 

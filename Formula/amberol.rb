@@ -11,12 +11,18 @@ class Amberol < Formula
   depends_on "python" => :build
   depends_on "rust" => :build
   depends_on "xz" => :build
+  depends_on "cairo"
   depends_on "dbus"
   depends_on "desktop-file-utils"
+  depends_on "gdk-pixbuf"
   depends_on "gettext"
+  depends_on "glib"
+  depends_on "graphene"
   depends_on "gstreamer"
   depends_on "gtk4"
+  depends_on "harfbuzz"
   depends_on "libadwaita"
+  depends_on "pango"
 
   def install
     # The gettext copy vendored by gettext-sys fails to compile with modern clang

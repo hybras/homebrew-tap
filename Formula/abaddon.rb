@@ -15,13 +15,28 @@ class Abaddon < Formula
   depends_on "pkgconf" => :build
 
   depends_on "adwaita-icon-theme"
+  depends_on "at-spi2-core"
+  depends_on "atkmm@2.28"
+  depends_on "cairo"
+  depends_on "cairomm@1.14"
+  depends_on "fmt"
+  depends_on "fontconfig"
+  depends_on "freetype"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
+  depends_on "glibmm@2.66"
+  depends_on "gtk+3"
   depends_on "gtkmm3"
+  depends_on "harfbuzz"
   depends_on "libhandy"
+  depends_on "libsigc++@2"
   depends_on "libsodium"
   depends_on :macos
   depends_on "nlohmann-json"
   depends_on "openssl@3"
   depends_on "opus"
+  depends_on "pango"
+  depends_on "pangomm@2.46"
   depends_on "spdlog"
 
   resource "ixwebsocket" do

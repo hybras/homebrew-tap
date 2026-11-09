@@ -23,9 +23,10 @@ class Amberol < Formula
     system "meson", "install", "-C", "_builddir", *std_meson_args
   end
 
-  def post_install
-    system "#{formula_opt_bin("glib")}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
-    system "#{formula_opt_bin("gtk4")}/gtk4-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
+  def post_install_steps
+    run "#{formula_opt_bin("glib")}/glib-compile-schemas", args: ["#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"]
+    run "#{formula_opt_bin("gtk4")}/gtk4-update-icon-cache",
+args: ["-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"]
   end
 
   test do

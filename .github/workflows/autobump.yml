@@ -1,0 +1,61 @@
+name: brew bump
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/autobump.yml
+  workflow_dispatch:
+    inputs:
+      formulae:
+        description: Custom (space/newline separated) list of formulae to livecheck and bump if outdated
+        required: false
+        default: >
+          pijul
+          sshpass
+      casks:
+        description: Custom (space/newline separated) list of casks to livecheck and bump if outdated
+        required: false
+        default: >
+          airmessage
+          kdeconnect@nightly
+          shrugs
+          webcord
+  schedule:
+    - cron: '5 4 5 * *'
+    - cron: '5 4 19 * *'
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash -xeuo pipefail {0}
+
+jobs:
+  autobump:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@c262868c096d909fc278daa87ed9772967331ea3 # 2026.11.02.1
+
+      - name: Set up git
+        id: git_setup
+        uses: Homebrew/actions/git-user-config@c262868c096d909fc278daa87ed9772967331ea3 # 2026.11.02.1
+        with:
+          username: ${{ case(github.event_name == 'schedule', 'BrewTestBot', github.actor) }}
+
+      - name: Bump formulae
+        uses: Homebrew/actions/bump-packages@c262868c096d909fc278daa87ed9772967331ea3 # 2026.11.02.1
+        with:
+          fork: false
+          token: ${{ secrets.PAT_GITHUB }}
+          formulae: ${{ github.event.inputs.formulae || env.FORMULAE }}
+          casks: ${{ github.event.inputs.casks || env.CASKS }}
+        env:
+          HOMEBREW_GIT_COMMITTER_NAME: ${{ steps.git_setup.outputs.name }}
+          HOMEBREW_GIT_COMMITTER_EMAIL: ${{ steps.git_setup.outputs.email }}

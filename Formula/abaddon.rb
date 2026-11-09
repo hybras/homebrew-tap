@@ -1,8 +1,8 @@
 class Abaddon < Formula
   desc "Alternative Discord client with voice support made with C++ and GTK 3"
   homepage "https://github.com/uowuo/abaddon"
-  url "https://github.com/uowuo/abaddon/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "a858fca424468a304e3cfc30be9b9982f3fbf078a897cb19a36a0da77fa02d41"
+  url "https://github.com/uowuo/abaddon/archive/refs/tags/v0.2.4.tar.gz"
+  sha256 "68cb3ca04eaf26dccf7d7750a65df8cf23819c9d501b25808a364b2915c360cf"
   license "GPL-3.0-only"
   head "https://github.com/hybras/abaddon.git", branch: "fix/macos-resource-fallback"
 

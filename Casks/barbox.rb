@@ -8,7 +8,7 @@ cask "barbox" do
   desc "Access disposable emails from the menu bar"
   homepage "https://muhammedkpln.github.io/barbox/"
 
-  deprecate! date: "2024-08-15", because: :unmaintained
+  disable! date: "2026-11-12", because: :unmaintained
 
   depends_on :macos
 

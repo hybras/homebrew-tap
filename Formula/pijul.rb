@@ -23,7 +23,7 @@ class Pijul < Formula
   depends_on "xxhash" => :build
   depends_on "zstd" => :build
   depends_on "libsodium"
-  depends_on "openssl"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "dbus"

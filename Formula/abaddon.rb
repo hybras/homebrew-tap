@@ -34,7 +34,7 @@ class Abaddon < Formula
   depends_on "libsodium"
   depends_on :macos
   depends_on "nlohmann-json"
-  depends_on "openssl"
+  depends_on "openssl@4"
   depends_on "opus"
   depends_on "pango"
   depends_on "pangomm@2.46"

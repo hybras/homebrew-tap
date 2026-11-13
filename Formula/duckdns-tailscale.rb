@@ -5,6 +5,12 @@ class DuckdnsTailscale < Formula
   sha256 "9b56cf9c02d3d4735fe8ec443f8d190afbca6d48680da39f6374303430d37f5d"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://ghcr.io/v2/hybras/tap"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "e0504faa0b039cb44b0bcd8f78c2db467630120ea9f0af0faecaab009645738a"
+  end
+
   depends_on "tailscale"
 
   def install

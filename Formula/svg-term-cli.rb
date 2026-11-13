@@ -13,13 +13,11 @@ class SvgTermCli < Formula
   end
 
   test do
-    resource "testdata" do
-      url "https://asciinema.org/a/569727.cast?dl=1"
-      sha256 "fcc69956aef7b2a2f69c1cf6924c4290b5598bd85dbc25e7079d3421ad0d083d"
-    end
-    resource("testdata").stage do
-      system bin/"svg-term", "--in=569727.cast", "--out", "parrot.svg"
-      assert_match "<svg", File.read("parrot.svg")
-    end
+    (testpath/"hello.cast").write <<~JSON
+      {"version": 2, "width": 20, "height": 2}
+      [0.1, "o", "Homebrew"]
+    JSON
+    system bin/"svg-term", "--in=hello.cast", "--out=hello.svg"
+    assert_match "Homebrew", (testpath/"hello.svg").read
   end
 end

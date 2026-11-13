@@ -8,9 +8,8 @@ class Sshpass < Formula
   bottle do
     root_url "https://ghcr.io/v2/hybras/tap"
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84ba8dc042ab4161ab7270f1227402635ae3438a25aeb6fcf9505e4251bf254c"
-    sha256 cellar: :any_skip_relocation, ventura:       "d8910d3b8d47c192efdb060e0bbecd647372dedfc770304e2fcf6693ea510b07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "889ca896637a79fe06f21fb84a71e1072c1177c7ce0315c20c476d88cdea0ce2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "2bde9a23ff2d0af022d588e19208883a5f318eb73c6e5b473cc0de83c9463db2"
+    sha256 cellar: :any,                 x86_64_linux: "b40add6496265036cdd41d6cc581999fb2a7e542ab0019ed551eae4cb1afecbc"
   end
 
   def install

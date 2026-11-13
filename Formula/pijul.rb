@@ -23,7 +23,7 @@ class Pijul < Formula
   depends_on "xxhash" => :build
   depends_on "zstd" => :build
   depends_on "libsodium"
-  depends_on "openssl@3"
+  depends_on "openssl"
 
   def install
     system "cargo", "install", *std_cargo_args

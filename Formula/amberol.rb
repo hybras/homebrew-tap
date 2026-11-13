@@ -7,7 +7,7 @@ class Amberol < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python" => :build
   depends_on "rust" => :build
   depends_on "xz" => :build
@@ -23,6 +23,10 @@ class Amberol < Formula
   depends_on "harfbuzz"
   depends_on "libadwaita"
   depends_on "pango"
+
+  on_linux do
+    depends_on "xorg-server" => :test
+  end
 
   def install
     # The gettext copy vendored by gettext-sys fails to compile with modern clang
@@ -49,6 +53,22 @@ class Amberol < Formula
     dbus = spawn formula_opt_bin("dbus")/"dbus-daemon", "--session", "--nofork",
                  "--address=#{ENV["DBUS_SESSION_BUS_ADDRESS"]}"
     Timeout.timeout(10) { sleep 0.1 until (testpath/"bus").exist? }
+
+    # Opening a window aborts in the macOS test sandbox: GDK cannot reach the
+    # WindowServer or LaunchServices because mach-lookup is denied.
+    if OS.mac?
+      assert_match "--help-gapplication", shell_output("#{bin}/amberol --help")
+      return
+    end
+
+    # Amberol needs a display; run a virtual one when there is none (e.g. in CI).
+    if ENV.exclude?("DISPLAY")
+      read_io, write_io = IO.pipe
+      xvfb = spawn formula_opt_bin("xorg-server")/"Xvfb", "-displayfd", write_io.fileno.to_s,
+                   "-nolisten", "unix", "-listen", "tcp", write_io => write_io
+      write_io.close
+      ENV["DISPLAY"] = "127.0.0.1:#{read_io.gets.strip}"
+    end
 
     gdbus = formula_opt_bin("glib")/"gdbus"
     playback_status = [
@@ -91,9 +111,9 @@ class Amberol < Formula
       end
     end
   ensure
-    if dbus
-      Process.kill("TERM", dbus)
-      Process.wait(dbus)
+    [dbus, xvfb].compact.each do |pid|
+      Process.kill("TERM", pid)
+      Process.wait(pid)
     end
   end
 end

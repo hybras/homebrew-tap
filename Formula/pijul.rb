@@ -10,6 +10,13 @@ class Pijul < Formula
     regex(%r{href=["']?https://crates.io/crates/pijul/v?(\d+(?:\.\d+)+(?:-(?:alpha|beta))?(?:[._-]\d+)?)}i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/hybras/tap"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:  "1edd1d45c7d7d9d7ab6737398a50c2a9b52e8de5c9030a4f2a04d031e3b43c95"
+    sha256 cellar: :any, x86_64_linux: "641d064be2f555b4324f5acb2ee3a03d038ebf99253b5286a668ed6e3bd5232b"
+  end
+
   depends_on "llvm" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build

@@ -7,7 +7,7 @@ class Sshpass < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/hybras/tap"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "84ba8dc042ab4161ab7270f1227402635ae3438a25aeb6fcf9505e4251bf254c"
     sha256 cellar: :any_skip_relocation, ventura:       "d8910d3b8d47c192efdb060e0bbecd647372dedfc770304e2fcf6693ea510b07"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "889ca896637a79fe06f21fb84a71e1072c1177c7ce0315c20c476d88cdea0ce2"
@@ -24,6 +24,6 @@ class Sshpass < Formula
   end
 
   test do
-    system "#{bin}/sshpass", "-h"
+    system bin/"sshpass", "-h"
   end
 end

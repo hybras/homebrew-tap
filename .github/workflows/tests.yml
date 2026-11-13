@@ -16,7 +16,7 @@ jobs:
   test-bot:
     strategy:
       matrix:
-        os: [ macos-26, macos-15-intel ]
+        os: [ macos-26 ]
         include:
           - os: ubuntu-latest
             container:
@@ -59,28 +59,9 @@ jobs:
           echo "::add-mask::${base64_token}"
           echo "token=${base64_token}" >> "${GITHUB_OUTPUT}"
       - run: brew test-bot --only-formulae --root-url=https://ghcr.io/v2/hybras/tap
-        if: github.event_name == 'pull_request' && matrix.os != 'macos-15-intel'
+        if: github.event_name == 'pull_request'
         env:
           HOMEBREW_DOCKER_REGISTRY_TOKEN: ${{ steps.base64-encode.outputs.token }}
-
-      # homebrew-core has no Intel macOS bottles so `test-bot` skips formulae
-      # with dependencies there. Build them and their dependencies from source.
-      - id: formulae-detect
-        if: github.event_name == 'pull_request' && matrix.os == 'macos-15-intel'
-        run: brew test-bot --only-formulae-detect
-
-      - name: Build bottles from source
-        if: steps.formulae-detect.outputs.testing_formulae != ''
-        env:
-          HOMEBREW_DOCKER_REGISTRY_TOKEN: ${{ steps.base64-encode.outputs.token }}
-          TESTING_FORMULAE: ${{ steps.formulae-detect.outputs.testing_formulae }}
-        run: |
-          for formula in ${TESTING_FORMULAE//,/ }
-          do
-            brew install --build-bottle "$formula"
-            brew test "$formula"
-            brew bottle --json --root-url=https://ghcr.io/v2/hybras/tap "$formula"
-          done
 
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'

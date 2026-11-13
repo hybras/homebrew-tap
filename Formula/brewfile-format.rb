@@ -9,9 +9,8 @@ class BrewfileFormat < Formula
   bottle do
     root_url "https://ghcr.io/v2/hybras/tap"
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45081e1a54ee8537dd4334d7ea0cf1911ed155b05774f9c7836865e235bb6759"
-    sha256 cellar: :any_skip_relocation, ventura:       "218d40875bd933ee1f0a4108870a66b8aba422af9c27e90c8aefd48a4b2e7467"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90fcc0db56fb9ac1a9c92a93a14b2e3d8b969360aea52fea5035bd9ee9450ffd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "0d7a288a77a4993bd6b375a562cac8c84ed3f0a51eb97b8b707f1da091646915"
+    sha256 cellar: :any,                 x86_64_linux: "edf8b78e37775a556f40701bae2ec599e33ea04fd8c6632861f2105e75c134be"
   end
 
   depends_on "rust" => :build

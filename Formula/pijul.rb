@@ -1,13 +1,13 @@
 class Pijul < Formula
   desc "Sound and fast distributed version control system"
   homepage "https://pijul.org"
-  url "https://static.crates.io/crates/pijul/pijul-1.0.0-beta.9.crate"
-  sha256 "c51a43abf66dfdd63393f9d7e426129a769c7345d64d451a30be9399733062d2"
+  url "https://static.crates.io/crates/pijul/pijul-1.0.0-beta.12.crate"
+  sha256 "cede03df443e55f8c47c7f213a67c37f8f8d7ceeff3578e9ba9a1e0df63191e2"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://lib.rs/crates/pijul/versions"
-    regex(%r{href=["']?https://crates.io/crates/pijul/v?(\d+(?:\.\d+)+(?:-(?:alpha|beta))?(?:[._-]\d+)?)}i)
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+(?:-beta\.\d+)?)$/i)
   end
 
   bottle do

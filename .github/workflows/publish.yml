@@ -20,7 +20,7 @@ defaults:
 
 jobs:
   pr-pull:
-    if:  ${{ ! ( github.event_name == 'pull_request' ) || contains(github.event.pull_request.labels.*.name, 'pr-pull') }}
+    if: github.event_name == 'workflow_dispatch' || github.event.label.name == 'pr-pull'
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -35,7 +35,8 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@63a2d4d8d4193eab3e62b1b782ff3ab8408f5b29 # 2026.11.09.1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # Push as an admin to bypass `main`'s pull request requirement.
+          token: ${{ secrets.PAT_GITHUB }}
 
       - name: Set up git
         id: git_setup

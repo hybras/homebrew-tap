@@ -3,6 +3,7 @@ class DuckdnsTailscale < Formula
   homepage "https://github.com/hybras/duckdns"
   url "https://github.com/hybras/duckdns/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "9b56cf9c02d3d4735fe8ec443f8d190afbca6d48680da39f6374303430d37f5d"
+  license "BSD-2-Clause"
 
   depends_on "tailscale"
 

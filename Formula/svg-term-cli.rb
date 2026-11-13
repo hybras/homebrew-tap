@@ -5,6 +5,13 @@ class SvgTermCli < Formula
   sha256 "ae65f9234b31b68ed1c27ca28eff4dddf599268a58f22b4150711bc2ce947aec"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/hybras/tap"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "e9f2eb96a476d13820069542820008f8fd31b455e0a17b2e52f5a76324b603b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "882695245972e01007ee5575535416f0abb575288eb2587682e4538c99b9cbf4"
+  end
+
   depends_on "node"
 
   def install

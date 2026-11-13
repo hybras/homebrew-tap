@@ -34,9 +34,6 @@ jobs:
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@63a2d4d8d4193eab3e62b1b782ff3ab8408f5b29 # 2026.11.09.1
-        with:
-          # Push as an admin to bypass `main`'s pull request requirement.
-          token: ${{ secrets.PAT_GITHUB }}
 
       - name: Set up git
         id: git_setup
@@ -69,6 +66,8 @@ jobs:
       - name: Push commits
         uses: Homebrew/actions/git-try-push@63a2d4d8d4193eab3e62b1b782ff3ab8408f5b29 # 2026.11.09.1
         with:
+          # Push as an admin to bypass `main`'s pull request requirement.
+          token: ${{ secrets.PAT_GITHUB }}
           branch: main
 
       - name: Delete branch

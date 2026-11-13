@@ -10,12 +10,13 @@ class Pijul < Formula
     regex(%r{href=["']?https://crates.io/crates/pijul/v?(\d+(?:\.\d+)+(?:-(?:alpha|beta))?(?:[._-]\d+)?)}i)
   end
 
-  depends_on "libsodium" => :build
   depends_on "llvm" => :build
-  depends_on "openssl" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "xxhash" => :build
   depends_on "zstd" => :build
+  depends_on "libsodium"
+  depends_on "openssl@3"
 
   def install
     system "cargo", "install", *std_cargo_args

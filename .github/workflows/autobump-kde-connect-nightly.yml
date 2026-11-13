@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - .github/workflows/bump-kde-connect-nightly.yml
+      - .github/workflows/autobump-kde-connect-nightly.yml
   workflow_dispatch:
   schedule:
     - cron: '7 7 * * *'

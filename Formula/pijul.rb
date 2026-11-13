@@ -25,6 +25,10 @@ class Pijul < Formula
   depends_on "libsodium"
   depends_on "openssl"
 
+  on_linux do
+    depends_on "dbus"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end

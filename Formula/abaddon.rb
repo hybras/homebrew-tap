@@ -8,8 +8,8 @@ class Abaddon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/hybras/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe: "20ea65b8fd059956781c1aad2d8ea00998eed75a04dd72727a126ffc828bf1d1"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe: "4469e990603839f8ba035b0dcc44108db120123dbec76cab4d02e03f8d311113"
   end
 
   depends_on "cmake" => :build

@@ -1,1 +1,0 @@
-brew cat "$@" | bat --language=rb

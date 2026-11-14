@@ -7,6 +7,11 @@ cask "bartender" do
     version "5.0.49"
     sha256 "7f91ad8d0aee86f5c784096d0b3d732f518356d3e1b2b3b9db2e196a0740574b"
   end
+  # Not installable on Linux; only gives `brew bump` on Linux runners a version.
+  on_linux do
+    version "5.0.49"
+    sha256 "7f91ad8d0aee86f5c784096d0b3d732f518356d3e1b2b3b9db2e196a0740574b"
+  end
 
   v = version.to_s.split(".")
 

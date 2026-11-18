@@ -5,6 +5,12 @@ class Amberol < Formula
   sha256 "52372ec6f5ba066409e8dfc4a62fdb2c57e79f83a809cf295ff0e040eebb233b"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/hybras/tap"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe: "e8e5be7a201ec7c0a61e206c6a8feba27d526d521eac3ef7832d85fda1ea5434"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build

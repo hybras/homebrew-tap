@@ -4,6 +4,7 @@ class Abaddon < Formula
   url "https://github.com/uowuo/abaddon/archive/refs/tags/v0.2.4.tar.gz"
   sha256 "68cb3ca04eaf26dccf7d7750a65df8cf23819c9d501b25808a364b2915c360cf"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/hybras/abaddon.git", branch: "fix/macos-resource-fallback"
 
   bottle do
@@ -75,6 +76,10 @@ class Abaddon < Formula
     sha256 "68c7ab4e408426088603e19955e746bb2a412d84bb121b6f39834c60fc8068b7"
   end
 
+  # Fall back to the install prefix for resources when not run from an `.app`.
+  # https://github.com/uowuo/abaddon/pull/393
+  patch :DATA
+
   def install
     resources.each do |r|
       r.stage buildpath/"subprojects"/r.name
@@ -89,3 +94,45 @@ class Abaddon < Formula
     assert_predicate bin/"abaddon", :executable?
   end
 end
+
+__END__
+diff --git a/src/platform.cpp b/src/platform.cpp
+--- a/src/platform.cpp
++++ b/src/platform.cpp
+@@ -7,9 +7,7 @@
+ #ifdef __APPLE__
+     #include <unistd.h>
+ #endif
+-#ifdef __linux__
+-    #include "util.hpp"
+-#endif
++#include "util.hpp"
+ 
+ #include <spdlog/spdlog.h>
+ 
+@@ -176,11 +174,22 @@
+         if (resourceURL != NULL) {
+             CFRelease(resourceURL);
+         }
+-        found_path = resourcePath;
+-        found = true;
+-        return found_path;
+     }
+ 
++    // Fall back to cwd, user dir or install prefix (e.g. Homebrew installs into share/abaddon)
++    const auto home_env = std::getenv("HOME");
++    if (home_env != nullptr) {
++        const static std::string home_path = std::string(home_env) + "/.local/share/abaddon";
++
++        for (const auto &path : {std::string(resourcePath), "."s, home_path, std::string(ABADDON_DEFAULT_RESOURCE_DIR)}) {
++            if (util::IsFolder(path + "/res") && util::IsFolder(path + "/css")) {
++                found_path = path;
++                found = true;
++                return found_path;
++            }
++        }
++    }
++
+     spdlog::get("discord")->warn("cant find a resources folder, will try to load from cwd");
+     found_path = ".";
+     found = true;

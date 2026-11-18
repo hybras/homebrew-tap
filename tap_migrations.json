@@ -1,3 +1,4 @@
 {
+  "kdeconnect": "homebrew/cask/kde-connect",
   "kdeconnect-nightly": "hybras/tap/kdeconnect@nightly"
 }

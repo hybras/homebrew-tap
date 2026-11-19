@@ -7,8 +7,7 @@ class DuckdnsTailscale < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/hybras/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "e0504faa0b039cb44b0bcd8f78c2db467630120ea9f0af0faecaab009645738a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "4bda47ef6368d21905b5ce10e326e6904f5d646395aebd9392c5fd4a124622d6"
   end
 
   depends_on "tailscale"

@@ -1,8 +1,8 @@
 class Amberol < Formula
   desc "Music Player"
   homepage "https://apps.gnome.org/app/io.bassi.Amberol/"
-  url "https://gitlab.gnome.org/World/amberol/-/archive/0.10.3/amberol-0.10.3.tar.gz"
-  sha256 "52372ec6f5ba066409e8dfc4a62fdb2c57e79f83a809cf295ff0e040eebb233b"
+  url "https://gitlab.gnome.org/World/amberol/-/archive/2026.1/amberol-2026.1.tar.gz"
+  sha256 "2112eebac5c7b0aab7243c428c794aecb136168c326648cfbbd8654ea2cc7631"
   license "GPL-3.0-or-later"
 
   bottle do

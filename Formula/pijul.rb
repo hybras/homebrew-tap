@@ -12,8 +12,8 @@ class Pijul < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/hybras/tap"
-    sha256 cellar: :any, arm64_tahoe:  "cb96818a94ab6c85c7871367dc2657b0e9d764af66b9b83175989bceb8d22c79"
-    sha256 cellar: :any, x86_64_linux: "bb97cfebd1d9d3c2fb89200b6cae74d94c1b3c8894aaa82e8b289c26b971266b"
+    sha256 cellar: :any, arm64_tahoe:  "916d8178e3e4b6a39b2217f13f8f9e342fd399ff8294b973cc79b08bff936265"
+    sha256 cellar: :any, x86_64_linux: "6c268dcbb34ba1ce8808203bc4cd47a532ab6cbceed09f9aa4c05c74a149783e"
   end
 
   depends_on "llvm" => :build

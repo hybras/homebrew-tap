@@ -26,6 +26,7 @@ class Pijul < Formula
 
   on_linux do
     depends_on "dbus"
+    depends_on "zlib-ng-compat"
   end
 
   def install

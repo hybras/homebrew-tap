@@ -7,7 +7,9 @@ class Amberol < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/hybras/tap"
-    sha256 cellar: :any, arm64_tahoe: "16dff4c30ded4d63356baf91074ef7457e035cabd00ff3b32133135a676d9425"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:  "b88083511a3b605187eef23520bf3ba1732d91fb3264db9b31038c7c186e659a"
+    sha256 cellar: :any, x86_64_linux: "d770c15bef0128c3c713499d78d4ddb9291f96fff70277fe5b0111fc9256fffe"
   end
 
   depends_on "meson" => :build
